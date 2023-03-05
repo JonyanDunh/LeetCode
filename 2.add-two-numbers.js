@@ -32,7 +32,6 @@ var addTwoNumbers = function (l1, l2) {
         Result[n]=sum
     }
     i=Result.length
-    console.log(Result)
     return generateListNode(Result)
 };
 function decodeListNode(listnode, sum) {
