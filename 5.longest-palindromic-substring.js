@@ -10,11 +10,12 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
+    var ReversedString=reverseArray(s)
     var MaxString=""
     var TmpString = s[0]
     for (var index = 1; index <= s.length;) {
         if (ReversedString.indexOf(TmpString) != -1) {
-            MaxString=((TmpString.length >= MaxString.length) ? TmpString : MaxString)
+            MaxString=(((TmpString.length >= MaxString.length)&&TmpString==reverseArray(TmpString)) ? TmpString : MaxString)
             TmpString+=s[index]
             index++
         }
@@ -22,13 +23,10 @@ var longestPalindrome = function(s) {
         {
             TmpString = TmpString.substring(1);
         }
-        // console.log("The max string:",MaxString)
     }
-    // MaxString=MaxString==""?TmpString:MaxString
     return MaxString
 };
 function reverseArray(Array){
     return Array.split('').reverse().join('');
 }
 // @lc code=end
-
